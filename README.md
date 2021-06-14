@@ -1,8 +1,6 @@
 #start the app with installing all the deps using 
  `npm i`
 
-
-
 ## Available Scripts
 
 In the project directory, you can run:

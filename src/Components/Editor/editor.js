@@ -50,6 +50,7 @@ const AceEditor = (props) => {
   };
 
   const onRun = () => {
+    console.log(editor.current.getSession().getAnnotations())
     ReactDOM.findDOMNode(document.getElementById("code-result")).srcdoc =
       editor.current.getValue();
     props.scrollDown();
