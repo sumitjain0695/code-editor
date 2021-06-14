@@ -17,8 +17,8 @@ const EditorPage = () => {
   };
 
   return (
-    <Box p={5} style={{ backgroundColor: darkTheme ? "#272822" : "#fff" }}>
-      <Box mb={3} py={5}>
+    <Box p={2} style={{ backgroundColor: darkTheme ? "#272822" : "#fff" }}>
+      <Box mb={3} py={4}>
         <Typography variant="h3" color="primary">
           ACE Editor
         </Typography>
