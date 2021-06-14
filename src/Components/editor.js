@@ -11,7 +11,7 @@ import { Brightness3, Brightness7, GetApp } from "@material-ui/icons";
 
 const ace = require("ace-builds/src-noconflict/ace");
 require(`ace-builds/src-noconflict/theme-twilight`);
-
+require(`ace-builds/src-noconflict/theme-monokai`);
 require("ace-builds/webpack-resolver");
 require("ace-builds/src-noconflict/mode-html");
 require("ace-builds/src-noconflict/mode-javascript");
@@ -46,15 +46,17 @@ const AceEditor = (props) => {
 
     ReactDOM.findDOMNode(document.getElementById("output")).srcdoc =
       editor.current.getValue();
+    props.scrollToOutput();
   };
   const toggleTheme = () => {
     //sets and unsets theme for the editor
     if (!darkTheme) {
-      editor.current.setTheme("ace/theme/twilight");
+      editor.current.setTheme("ace/theme/monokai");
     } else {
       editor.current.setTheme("ace/theme/textmate");
     }
     setDarkTheme((prevTheme) => !prevTheme);
+    props.setDarkTheme((prevTheme) => !prevTheme);
   };
 
   const downloadCode = () => {

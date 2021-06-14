@@ -1,9 +1,8 @@
 import React from "react";
-import './output.css';
-
-const Output = (props) => {
+import './output.css'
+const Output = React.forwardRef((props,ref) => {
   return (
-    <div id="iframewrapper" className='frame-wrapper'>
+    <div id="iframewrapper" ref={ref} className='frame-wrapper'>
       <iframe
         id="output"
         title="output"
@@ -13,6 +12,6 @@ const Output = (props) => {
       ></iframe>
     </div>
   );
-};
+})
 
 export default Output;
