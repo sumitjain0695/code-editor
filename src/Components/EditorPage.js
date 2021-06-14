@@ -1,10 +1,5 @@
 import React, { useRef, useState } from "react";
-import {
-  Box,
-  Container,
-  Grid,
-  Typography,
-} from "@material-ui/core";
+import { Box, Grid, Typography } from "@material-ui/core";
 import AceEditor from "./editor";
 import Output from "./output";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -22,16 +17,17 @@ const EditorPage = () => {
   };
 
   return (
-    <Container
-      maxWidth="lg"
-      style={{ backgroundColor: darkTheme ? "#272822" : "#fff" }}
-    >
-      <Box mb={3} p={5}>
+    <Box p={5} style={{ backgroundColor: darkTheme ? "#272822" : "#fff" }}>
+      <Box mb={3} py={5}>
         <Typography variant="h3" color="primary">
           ACE Editor
         </Typography>
       </Box>
-      <Grid container spacing={2} style={{ backgroundColor: darkTheme ? "#616161" : "lightgray" }}>
+      <Grid
+        container
+        spacing={2}
+        style={{ backgroundColor: darkTheme ? "#616161" : "lightgray" }}
+      >
         <Grid item xs={12} md={6}>
           <AceEditor
             setDarkTheme={setDarkTheme}
@@ -42,7 +38,7 @@ const EditorPage = () => {
           <Output ref={outputRef} />
         </Grid>
       </Grid>
-    </Container>
+    </Box>
   );
 };
 export default EditorPage;

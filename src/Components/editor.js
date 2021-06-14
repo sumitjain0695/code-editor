@@ -10,7 +10,7 @@ import {
 import { Brightness3, Brightness7, GetApp } from "@material-ui/icons";
 
 const ace = require("ace-builds/src-noconflict/ace");
-require(`ace-builds/src-noconflict/theme-twilight`);
+
 require(`ace-builds/src-noconflict/theme-monokai`);
 require("ace-builds/webpack-resolver");
 require("ace-builds/src-noconflict/mode-html");
