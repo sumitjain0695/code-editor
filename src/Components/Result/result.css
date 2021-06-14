@@ -1,0 +1,9 @@
+.frame {
+  height: 100%;
+}
+
+@media (max-width: 960px) {
+  .frame {
+    height: 100vh;
+  }
+}

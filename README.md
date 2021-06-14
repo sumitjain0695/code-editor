@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+#start the app with installing all the deps using 
+ `npm i`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 

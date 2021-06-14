@@ -1,9 +1,9 @@
 import "./App.css";
-import EditorPage from "./Components/EditorPage";
+import Basepage from "./Components/Basepage";
 function App() {
   return (
     <div className="App">
-      <EditorPage />
+      <Basepage />
     </div>
   );
 }
