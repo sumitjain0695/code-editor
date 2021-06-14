@@ -1,0 +1,9 @@
+.frame-wrapper{
+    height: 100%;
+}
+
+@media (max-width:960px) {
+    .frame-wrapper{
+        height: 70vh;
+    }
+}

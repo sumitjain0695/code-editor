@@ -1,12 +1,13 @@
 import React from "react";
+import './output.css';
 
 const Output = (props) => {
   return (
-    <div id="iframewrapper">
+    <div id="iframewrapper" className='frame-wrapper'>
       <iframe
         id="output"
         title="output"
-        style={{ border: "none", minHeight: "76vh" , backgroundColor: "#fff"}}
+        style={{ border: "none", height: "inherit" , backgroundColor: "#fff"}}
         allowFullScreen
         width="100%"
       ></iframe>
