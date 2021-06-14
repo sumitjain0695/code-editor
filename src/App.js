@@ -1,12 +1,11 @@
 import "./App.css";
-import AceEditor1  from "./Components/Editor/editor";
-import Output  from "./Components/Output/output";
-
+import EditorPage from "./Components/EditorPage";
 function App() {
-  return <div className="App">
-    <AceEditor1/>
-    <Output/>
-  </div>;
+  return (
+    <div className="App">
+      <EditorPage />
+    </div>
+  );
 }
 
 export default App;
