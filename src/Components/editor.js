@@ -36,6 +36,7 @@ const AceEditor = (props) => {
   const onSubmit = () => {
     ReactDOM.findDOMNode(document.getElementById("output")).srcdoc =
       editor.current.getValue();
+    props.scrollToOutput();
   };
   const toggleTheme = () => {
     if (!darkTheme) {
@@ -44,6 +45,7 @@ const AceEditor = (props) => {
       editor.current.setTheme("ace/theme/textmate");
     }
     setDarkTheme((prevTheme) => !prevTheme);
+    props.setDarkTheme((prevTheme) => !prevTheme);
   };
 
   return (

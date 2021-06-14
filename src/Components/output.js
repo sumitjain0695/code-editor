@@ -1,8 +1,8 @@
 import React from "react";
 
-const Output = (props) => {
+const Output = React.forwardRef((props,ref) => {
   return (
-    <div id="iframewrapper">
+    <div id="iframewrapper" ref={ref}>
       <iframe
         id="output"
         title="output"
@@ -12,6 +12,6 @@ const Output = (props) => {
       ></iframe>
     </div>
   );
-};
+})
 
 export default Output;
