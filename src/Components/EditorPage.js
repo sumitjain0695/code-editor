@@ -24,14 +24,14 @@ const EditorPage = () => {
   return (
     <Container
       maxWidth="lg"
-      style={{ backgroundColor: darkTheme ? "#141414" : "#fff" }}
+      style={{ backgroundColor: darkTheme ? "#272822" : "#fff" }}
     >
       <Box mb={3} p={5}>
         <Typography variant="h3" color="primary">
           ACE Editor
         </Typography>
       </Box>
-      <Grid container spacing={5} style={{ backgroundColor: "lightgray" }}>
+      <Grid container spacing={2} style={{ backgroundColor: darkTheme ? "#616161" : "lightgray" }}>
         <Grid item xs={12} md={6}>
           <AceEditor
             setDarkTheme={setDarkTheme}
