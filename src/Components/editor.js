@@ -31,14 +31,25 @@ const AceEditor = (props) => {
     editor.current.setShowPrintMargin(false);
     editor.current.setOptions({ minLines: 33, maxLines: 33 });
     editor.current.setFontSize("18px");
+
+    //sets code in editor and result in iframe if code is present in localstorage
+    if (localStorage.getItem("code")) {
+      editor.current.setValue(localStorage.getItem("code"));
+      ReactDOM.findDOMNode(document.getElementById("output")).srcdoc =
+        editor.current.getValue();
+    }
   }, []);
 
   const onSubmit = () => {
+    //sets the current code in localstorage to retain after refreshing the page if run and sets the code in iframe
+    localStorage.setItem("code", editor.current.getValue());
+
     ReactDOM.findDOMNode(document.getElementById("output")).srcdoc =
       editor.current.getValue();
     props.scrollToOutput();
   };
   const toggleTheme = () => {
+    //sets and unsets theme for the editor
     if (!darkTheme) {
       editor.current.setTheme("ace/theme/monokai");
     } else {
@@ -46,6 +57,24 @@ const AceEditor = (props) => {
     }
     setDarkTheme((prevTheme) => !prevTheme);
     props.setDarkTheme((prevTheme) => !prevTheme);
+  };
+
+  const downloadCode = () => {
+    //downloads the code in a txt file
+    var element = document.createElement("a");
+    element.setAttribute(
+      "href",
+      "data:text/plain;charset=utf-8," +
+        encodeURIComponent(editor.current.getValue())
+    );
+    element.setAttribute("download", "download.txt");
+
+    element.style.display = "none";
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
   };
 
   return (
@@ -70,7 +99,7 @@ const AceEditor = (props) => {
             </IconButton>
           </Tooltip>
           <Tooltip title="Download Code" arrow>
-            <IconButton>
+            <IconButton onClick={downloadCode}>
               <GetApp style={{ color: "#fff" }} />
             </IconButton>
           </Tooltip>
