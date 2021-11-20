@@ -1,7 +1,9 @@
+## A JSfiddle like code editor for testing out code snippets.
+
 #start the app with installing all the deps using 
  `npm i`
 
-## Available Scripts
+## Available Scripts 
 
 In the project directory, you can run:
 
