@@ -1,4 +1,4 @@
-## A JSfiddle like code editor for testing out code snippets.
+## A JSfiddle like code editor for testing code snippets in html, css and js.
 
 #start the app with installing all the deps using 
  `npm i`
